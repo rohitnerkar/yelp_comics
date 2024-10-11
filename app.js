@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const bodyparser = require('body-parser');
+const flash = require('connect-flash');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const expressSession = require('express-session');
@@ -19,7 +20,7 @@ const Comic = require('./models/comic');
 const Comment = require('./models/comment');
 const User = require('./models/user');
 
-app.use(morgan('tiny'));
+// app.use(morgan('tiny'));
 
 // const seed = require('./utils/seed');
 // seed();
@@ -30,6 +31,9 @@ mongoose.connect(config.db.connection);// {useNewUrlParser: true, useUnifiedTopo
 
 app.set("view engine", "ejs");
 app.use(express.static('public'));
+app.use(express.json({
+    type: ["application/json", "test/plain"]
+}));
 
 app.use(expressSession({
     secret: "dfhdgfkadfgadkfghadkfaehgkfadjhfakfgeifbadkjfheskfjdshgksgbsdkjgh",
@@ -39,6 +43,8 @@ app.use(expressSession({
 
 app.use(methodOverride('_method'));
 
+app.use(flash());
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.serializeUser(User.serializeUser());
@@ -47,6 +53,8 @@ passport.use(new LocalStrategy(User.authenticate()));
 
 app.use((req, res, next) => {
     res.locals.user = req.user;
+    res.locals.errorMessage = req.flash("error");
+    res.locals.successMessage = req.flash("success");
     next();
 });
 
