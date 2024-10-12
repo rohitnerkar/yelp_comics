@@ -10,6 +10,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const expressSession = require('express-session');
 dotenv.config();
+const connectMongoDb = require('./utils/mongodb');
 
 const {config, port} = require('./config');
 
@@ -27,9 +28,11 @@ const User = require('./models/user');
 // const seed = require('./utils/seed');
 // seed();
 
+connectMongoDb();
+
 app.use(bodyparser.urlencoded({extended: true}));
 
-mongoose.connect(config.db.connectionUrl);// {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
+// mongoose.connect(config.db.connection);// {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
 
 app.set("view engine", "ejs");
 app.use(express.static('public'));
