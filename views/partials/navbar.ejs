@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00ABE4;">
     <a class="navbar-brand" href="/comics">
         <img src="\img\bang_soundeffect.svg" alt="Brand Image" height="40" width="40">
     </a>
@@ -9,43 +9,43 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/comics">Comics</a>
+          <a class="nav-link text-white" href="/comics">Comics</a>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
             Genres
           </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="/comics/genre/superhero">Superhero</a>
-            <a class="dropdown-item" href="/comics/genre/manga">Manga</a>
-            <a class="dropdown-item" href="/comics/genre/humor">Humor</a>
-            <a class="dropdown-item" href="/comics/genre/slice-of-life">Slice-of-Life</a>
-            <a class="dropdown-item" href="/comics/genre/sci-fi">Sci-fi</a>
-            <a class="dropdown-item" href="/comics/genre/fantasy">Fantasy</a>
-            <a class="dropdown-item" href="/comics/genre/horror">Horror</a>
-            <a class="dropdown-item" href="/comics/genre/action">Action</a>
-            <a class="dropdown-item" href="/comics/genre/nonfiction">Nonfiction</a>
+          <div class="dropdown-menu" style="background-color: #00ABE4;">
+            <a class="dropdown-item text-white" href="/comics/genre/superhero">Superhero</a>
+            <a class="dropdown-item text-white" href="/comics/genre/manga">Manga</a>
+            <a class="dropdown-item text-white" href="/comics/genre/humor">Humor</a>
+            <a class="dropdown-item text-white" href="/comics/genre/slice-of-life">Slice-of-Life</a>
+            <a class="dropdown-item text-white" href="/comics/genre/sci-fi">Sci-fi</a>
+            <a class="dropdown-item text-white" href="/comics/genre/fantasy">Fantasy</a>
+            <a class="dropdown-item text-white" href="/comics/genre/horror">Horror</a>
+            <a class="dropdown-item text-white" href="/comics/genre/action">Action</a>
+            <a class="dropdown-item text-white" href="/comics/genre/nonfiction">Nonfiction</a>
           </div>
         </li>
 
         <% if(user) { %>
           <li class="nav-item">
-            <a class="nav-link" href="/comics/new">Add Comic</a>
+            <a class="nav-link" style="color: #ffffff;" href="/comics/new">Add Comic</a>
           </li>
         <% } %>
         
         <% if(user) { %>
             <li class="nav-item">
-              <a class="nav-link" href="/logout">Log Out</a>
+              <a class="nav-link" style="color: #ffffff;" href="/logout">Log Out</a>
             </li>
         <% } else { %>
             <li class="nav-item">
-              <a class="nav-link" href="/login">Log In</a>
+              <a class="nav-link" style="color: #ffffff;" href="/login">Log In</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="/signup">Sign Up</a>
+              <a class="nav-link" style="color: #ffffff;" href="/signup">Sign Up</a>
             </li>
         <% } %>
         
@@ -57,7 +57,7 @@
       </ul>
       <form class="form-inline my-2 my-lg-0" action="/comics/search" method="GET">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" name="term" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-success my-2 my-sm-0 text-white" type="submit">Search</button>
       </form>
     </div>
 </nav>
