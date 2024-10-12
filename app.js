@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyparser = require('body-parser');
+const dotenv = require("dotenv");
 const flash = require('connect-flash');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
@@ -8,6 +9,7 @@ const methodOverride = require('method-override');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const expressSession = require('express-session');
+dotenv.config();
 
 const config = require('./config');
 
@@ -27,7 +29,7 @@ const User = require('./models/user');
 
 app.use(bodyparser.urlencoded({extended: true}));
 
-mongoose.connect(config.db.connection);// {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
+mongoose.connect(config.connectionUrl);// {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
 
 app.set("view engine", "ejs");
 app.use(express.static('public'));
