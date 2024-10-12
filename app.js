@@ -29,7 +29,7 @@ const User = require('./models/user');
 
 app.use(bodyparser.urlencoded({extended: true}));
 
-mongoose.connect(config.connectionUrl);// {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
+mongoose.connect(config.db.connectionUrl);// {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
 
 app.set("view engine", "ejs");
 app.use(express.static('public'));
