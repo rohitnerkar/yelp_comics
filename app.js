@@ -32,7 +32,6 @@ connectMongoDb();
 
 app.use(bodyparser.urlencoded({extended: true}));
 
-// mongoose.connect(config.db.connection);// {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
 
 app.set("view engine", "ejs");
 app.use(express.static('public'));
