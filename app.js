@@ -11,7 +11,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const expressSession = require('express-session');
 dotenv.config();
 
-const config = require('./config');
+const {config, port} = require('./config');
 
 const comicRoutes = require('./routes/comics');
 const commentRoutes = require('./routes/comments');
@@ -66,7 +66,7 @@ app.use("/comics", comicRoutes);
 app.use("/comics/:id/comments", commentRoutes);
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("yelp_comics is running...");
 });
 
