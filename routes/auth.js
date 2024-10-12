@@ -36,11 +36,6 @@ router.post('/login', passport.authenticate('local', {
     successFlash: "Logged in successfully!"
 }));
 
-// router.get('/logout', (req, res) => {
-//     req.logout();
-//     res.redirect('/comics');
-// });
-
 router.get("/logout", (req, res, next) => {
     req.logout((err) => {
         if (err) {

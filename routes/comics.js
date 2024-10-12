@@ -181,5 +181,4 @@ router.delete("/:id", checkComicOwner, async (req, res) => {
     }
 });
 
-
 module.exports = router;

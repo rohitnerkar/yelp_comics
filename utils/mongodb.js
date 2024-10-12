@@ -1,33 +1,9 @@
-// const mongoose = require("mongoose");
-// const { connectionUrl } = require("../config");
-
-// const connectMongodb = async() => {
-//     try {
-//         await mongoose.connect(connectionUrl, {
-//             useNewUrlParser: true, 
-//             useUnifiedTopology: true,
-//             serverSelectionTimeoutMS: 5000,
-//             connectTimeoutMS: 10000
-//         });
-//         console.log("Database connection successful");
-//     } catch (error) {
-//         console.log(error.message);
-//     }
-// }
-
-// module.exports = connectMongodb;
-
 const mongoose = require("mongoose");
 const connectionUrl = process.env.CONNECTION_URL || "mongodb://localhost:27017/yelp-comics";
 
 const connectMongodb = async (retryCount = 5) => {
     try {
-        await mongoose.connect(connectionUrl, {
-            useNewUrlParser: true, 
-            useUnifiedTopology: true,
-            serverSelectionTimeoutMS: 5000,
-            connectTimeoutMS: 10000
-        });
+        await mongoose.connect(connectionUrl);
         console.log("Database connection successful");
     } catch (error) {
         console.error("Database connection error:", error.message);
@@ -41,7 +17,6 @@ const connectMongodb = async (retryCount = 5) => {
     }
 };
 
-// Event listeners for connection events
 mongoose.connection.on('error', (err) => {
     console.error('Mongoose connection error:', err);
 });

@@ -20,9 +20,9 @@
 
 .card-text {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6; /* Increased for better readability */
-    text-align: justify; /* Aligns the text evenly across the width */
-    margin: 10px 0; /* Add some vertical spacing if needed */
+    line-height: 1.6;
+    text-align: justify;
+    margin: 10px 0;
 }
 
 
@@ -30,22 +30,10 @@
     width: 80%;
 }
 
-/* .landing-page {
-    /* padding: 310px; */
-    /* margin: 0; */
-    /* background-color: cornflowerblue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%; */
-
-/* } */ 
-
 html, body {
     height: 100%;
     margin: 0;
     background-color: #E9F1FA;
-    /* #00ABE4;  */
 }
 
 .landing-page {
@@ -67,17 +55,16 @@ html, body {
     margin: 10px;
 }
 
-
 h1 {
     margin-bottom: 20px;
-    font-size: 3.2rem; /* Adjust size as needed */
+    font-size: 3.2rem;
 }
 
 a button {
     padding: 10px 20px;
     font-size: 1.5rem;
     cursor: pointer;
-    background-color: green; /* Button background color */
+    background-color: green;
     color: white;
     border: none;
     border-radius: 10px;
@@ -85,5 +72,5 @@ a button {
 
 a button:hover {
     color: black;
-    background-color: lightgreen; /* Hover effect for button */
+    background-color: lightgreen;
 }
